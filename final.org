@@ -1,9 +1,10 @@
-#+OPTIONS: toc:nil num:nil
-#+REVEAL_ROOT: ./reveal.js
-#+REVEAL_TITLE_SLIDE:
+#+OPTIONS: toc:nil num:nil author:nil timestamp:nil
+#+REVEAL_ROOT: ./revealjs
+#+title: Journey Through the Pipeline
 #+REVEAL_THEME: serif
 #+EXPORT_FILE_NAME: index.html
-* Journey through the Pipeline
+
+* Who am I?
 + COOP Student from UC
 + Computational Team
 ** What Have I been doing?
@@ -11,9 +12,25 @@
 + =compileqc=
 + =atac_seq_mixtape=
 + Mixtape Engineers
-* TODO Trackgen
+* Mixtape Engineers
++ Gitlab repo that facilitates team organization
++ Set of standards for new projects
++ Engineering rigor
+** Agile Board
+[[file:agile_board.png]]
+** Architecture
+#+attr_html: :width 840px
+[[file:mixtape_engineers.png]]
+** Rationale (why not the wiki?)
++ Companion to the ASAP wiki page
++ Advanced version control
++ Used as an example project
+
+* Trackgen
 + Generate UCSC trackhub config files
-  ADD GIF HERE
+  [[file:trackgen.png]]
+** Output
+[[file:trackgen_output.png]]
 ** Usage
 #+begin_src bash
 trackgen --help # get some help
@@ -24,7 +41,7 @@ trackgen hub # generates hub config
 ** Containers and Modules
 + Module is stable, container is unstable
 #+begin_src bash
-module load trackgen
+module load trackgen/0.0.1-dev
 trackgen --help
 # is equivalent to
 module load singularity
@@ -34,13 +51,37 @@ singularity run $TEAM/lew2mz/containers/trackgen --help
 + Functional config language (modified JSON/YAML)
 + Regex/glob based detection of files
 + JSON/YAML to hub conversion
-** TODO Development strategy
-+ Some unit tests
+** Development strategy
++ Unit tests
 + Easily extendable
-+ Automatic Documentation (LINK HERE)
-** TODO Architecture
-| High level                    | Low level                    |
-|-------------------------------+------------------------------|
++ Automatic Documentation
+
+[[file:trackgen_docs.png]]
+** Project structure
+#+begin_src
+trackgen
+├── classes.py
+├── CLI.py
+├── config.py
+├── data
+│   ├── associations.json
+│   ├── common.json
+│   ├── complete.json
+│   ├── defaults.json
+│   ├── example_config.json
+│   ├── example_hub.txt
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── README.org
+│   ├── template_page.html
+│   └── valid_file_extensions.json
+├── data_interpreter.py
+├── functions.py
+├── __init__.py
+├── __main__.py
+└── __pycache__
+#+end_src
+** Architecture
 | [[file:trackgen_high_level.png]] | [[file:trackgen_low_level.png]] |
 
 * Compileqc
@@ -57,59 +98,58 @@ singularity run $TEAM/lew2mz/containers/compileqc --help
 + Different Sheets for each data type
 [[file:spreadsheet.png]]
 ** Features
-Aggregate the following output
+Aggregate the following output:
 + Homer
 + (TF/NONTF) RELI
 + ENCODE
-** TODO Development strategy
+** Development strategy
 + Test based development
 + Object oriented
 + Design before code
-+ Automatic documentation (LINK)
-** TODO ARCHITECTURE
-| High level                    | Low level                    |
-|-------------------------------+------------------------------|
++ Automatic documentation
+** Project Structure
+#+begin_src
+compileqc
+├── cli.py
+├── data.py
+├── __init__.py
+├── __main__.py
+└── __pycache__
+#+end_src
+** Architecture
 | [[file:compileqc_high_level.png]] | [[file:compileqc_low_level.png]] |
 * Atac seq mixtape
 + Nextflow pipeline to automate analysis
 ** Contribution
 + Make UI
 + compilqc integration
-* Make UI
-+ Intuitive interface
-+ Automatic help generation
-+ Error detection
-** Usage
-#+begin_src bash
-make # or make help
-make config # will walk you through data entry
-make config # run it after data entry
-make run # run the pipeline (will fail)
-#+end_src
-** TODO Demo
-ADD GIF HERE
-** Advantages over the old method
-+ Users don't have to learn a new configuration framework
-+ Options have sane defaults
 * Compileqc integration
 + New and improved QC sheet
 ** Implementation details
 + Added an easy way to add new flags
-+ new mapping json input allows for shortname in QC sheet
++ New mapping json input allows for shortname configuration in QC sheet
 + No module dependencies, uses singularity containers
-* Mixtape Engineers
-+ Gitlab repo that facilitates team organization
-+ Set of standards for new projects
-** Agile Board
-[[file:agile_board.png]]
-** TODO Architecture
-Add folder structure here
-** Rationale (why not the wiki?)
-The wiki is great for:
-+ User Instructions
-+ General Design documentation
+* Make UI
++ Intuitive interface
++ Automatic help generation
++ Error detection
 
-The wiki is limited in:
-+ Version control
-+ Division of tasks
-+ File viewing
+  [[file:make_interface.gif]]
+** Usage
+#+begin_leftcol
+#+begin_src bash
+make # or make help
+make config # will guide you through initial data entry
+make config # run it after data entry
+make run # run the pipeline (will fail)
+#+end_src
+#+end_leftcol
+#+begin_rightcol
+#+attr_html: :width 70%
+[[file:make_help.png]]
+#+end_rightcol
+** Advantages over the old method
++ Users don't have to learn a new configuration framework
++ Options have sane defaults
++ More intuitive
++ Automatic documentation

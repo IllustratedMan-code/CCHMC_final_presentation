@@ -2,28 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
+<title>Journey Through the Pipeline</title>
 <meta name="author" content="David Lewis"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="./reveal.js/dist/reveal.css"/>
+<link rel="stylesheet" href="./revealjs/dist/reveal.css"/>
 
-<link rel="stylesheet" href="./reveal.js/dist/theme/serif.css" id="theme"/>
+<link rel="stylesheet" href="./revealjs/dist/theme/serif.css" id="theme"/>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Journey Through the Pipeline</h1>
+</section>
+
 <section>
-<section id="slide-org78ba45c">
-<h2 id="org78ba45c">Journey through the Pipeline</h2>
+<section id="slide-org015fc0d">
+<h2 id="org015fc0d">Who am I?</h2>
 <ul>
 <li>COOP Student from UC</li>
 <li>Computational Team</li>
 
 </ul>
 </section>
-<section id="slide-org3e395aa">
-<h3 id="org3e395aa">What Have I been doing?</h3>
+<section id="slide-org4cb6f62">
+<h3 id="org4cb6f62">What Have I been doing?</h3>
 <ul>
 <li><code>trackgen</code></li>
 <li><code>compileqc</code></li>
@@ -34,16 +39,61 @@
 </section>
 </section>
 <section>
-<section id="slide-org8188074">
-<h2 id="org8188074"><span class="todo TODO">TODO</span> Trackgen</h2>
+<section id="slide-orgb2113d2">
+<h2 id="orgb2113d2">Mixtape Engineers</h2>
 <ul>
-<li>Generate UCSC trackhub config files
-ADD GIF HERE</li>
+<li>Gitlab repo that facilitates team organization</li>
+<li>Set of standards for new projects</li>
+<li>Engineering rigor</li>
 
 </ul>
 </section>
-<section id="slide-org2e579b8">
-<h3 id="org2e579b8">Usage</h3>
+<section id="slide-org80de5f2">
+<h3 id="org80de5f2">Agile Board</h3>
+
+<div id="org2bc8170" class="figure">
+<p><img src="agile_board.png" alt="agile_board.png" />
+</p>
+</div>
+</section>
+<section id="slide-org228603d">
+<h3 id="org228603d">Architecture</h3>
+
+<div id="org2c062f9" class="figure">
+<p><img src="mixtape_engineers.png" alt="mixtape_engineers.png" width="840px" />
+</p>
+</div>
+</section>
+<section id="slide-orgb2871e4">
+<h3 id="orgb2871e4">Rationale (why not the wiki?)</h3>
+<ul>
+<li>Companion to the ASAP wiki page</li>
+<li>Advanced version control</li>
+<li>Used as an example project</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgeb9a350">
+<h2 id="orgeb9a350">Trackgen</h2>
+<ul>
+<li>Generate UCSC trackhub config files
+<img src="trackgen.png" alt="trackgen.png" /></li>
+
+</ul>
+</section>
+<section id="slide-org7fc3165">
+<h3 id="org7fc3165">Output</h3>
+
+<div id="org06ae3a8" class="figure">
+<p><img src="trackgen_output.png" alt="trackgen_output.png" />
+</p>
+</div>
+</section>
+<section id="slide-org3d97f2c">
+<h3 id="org3d97f2c">Usage</h3>
 <div class="org-src-container">
 
 <pre class="src src-bash">trackgen --help <span style="color: #5f676b;"># </span><span style="color: #5f676b;">get some help</span>
@@ -52,20 +102,20 @@ trackgen hub <span style="color: #5f676b;"># </span><span style="color: #5f676b;
 </pre>
 </div>
 
-<div id="orga9ce1ed" class="figure">
+<div id="org57f61ca" class="figure">
 <p><img src="trackgenhelp.png" alt="trackgenhelp.png" />
 </p>
 </div>
 </section>
-<section id="slide-org4233132">
-<h3 id="org4233132">Containers and Modules</h3>
+<section id="slide-org1062372">
+<h3 id="org1062372">Containers and Modules</h3>
 <ul>
 <li>Module is stable, container is unstable</li>
 
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-bash">module load trackgen
+<pre class="src src-bash">module load trackgen/0.0.1-dev
 trackgen --help
 <span style="color: #5f676b;"># </span><span style="color: #5f676b;">is equivalent to</span>
 module load singularity
@@ -73,8 +123,8 @@ singularity run $<span style="color: #9da9a0;">TEAM</span>/lew2mz/containers/tra
 </pre>
 </div>
 </section>
-<section id="slide-orgb707704">
-<h3 id="orgb707704">Features</h3>
+<section id="slide-org84dc7ff">
+<h3 id="org84dc7ff">Features</h3>
 <ul>
 <li>Functional config language (modified JSON/YAML)</li>
 <li>Regex/glob based detection of files</li>
@@ -82,17 +132,49 @@ singularity run $<span style="color: #9da9a0;">TEAM</span>/lew2mz/containers/tra
 
 </ul>
 </section>
-<section id="slide-orgb86c6a2">
-<h3 id="orgb86c6a2"><span class="todo TODO">TODO</span> Development strategy</h3>
+<section id="slide-orga41273f">
+<h3 id="orga41273f">Development strategy</h3>
 <ul>
-<li>Some unit tests</li>
+<li>Unit tests</li>
 <li>Easily extendable</li>
-<li>Automatic Documentation (LINK HERE)</li>
+<li>Automatic Documentation</li>
 
 </ul>
+
+
+<div id="org7a5c00e" class="figure">
+<p><img src="trackgen_docs.png" alt="trackgen_docs.png" />
+</p>
+</div>
 </section>
-<section id="slide-org481379f">
-<h3 id="org481379f"><span class="todo TODO">TODO</span> Architecture</h3>
+<section id="slide-org86baadd">
+<h3 id="org86baadd">Project structure</h3>
+<pre class="example">
+trackgen
+├── classes.py
+├── CLI.py
+├── config.py
+├── data
+│   ├── associations.json
+│   ├── common.json
+│   ├── complete.json
+│   ├── defaults.json
+│   ├── example_config.json
+│   ├── example_hub.txt
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── README.org
+│   ├── template_page.html
+│   └── valid_file_extensions.json
+├── data_interpreter.py
+├── functions.py
+├── __init__.py
+├── __main__.py
+└── __pycache__
+</pre>
+</section>
+<section id="slide-org6e78bc6">
+<h3 id="org6e78bc6">Architecture</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -101,12 +183,6 @@ singularity run $<span style="color: #9da9a0;">TEAM</span>/lew2mz/containers/tra
 
 <col  class="org-left" />
 </colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">High level</th>
-<th scope="col" class="org-left">Low level</th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="org-left"><img src="trackgen_high_level.png" alt="trackgen_high_level.png" /></td>
@@ -118,16 +194,16 @@ singularity run $<span style="color: #9da9a0;">TEAM</span>/lew2mz/containers/tra
 </section>
 </section>
 <section>
-<section id="slide-orgf460594">
-<h2 id="orgf460594">Compileqc</h2>
+<section id="slide-orge0faef5">
+<h2 id="orge0faef5">Compileqc</h2>
 <ul>
 <li>Generate QC sheet from pipeline</li>
 <li>Budget Multiqc</li>
 
 </ul>
 </section>
-<section id="slide-org876c6e0">
-<h3 id="org876c6e0">Usage</h3>
+<section id="slide-org74d0d5b">
+<h3 id="org74d0d5b">Usage</h3>
 <div class="org-src-container">
 
 <pre class="src src-bash">module load singularity
@@ -135,28 +211,28 @@ singularity run $<span style="color: #9da9a0;">TEAM</span>/lew2mz/containers/com
 </pre>
 </div>
 
-<div id="org8af6c98" class="figure">
+<div id="orgf215a3d" class="figure">
 <p><img src="compileqchelp.png" alt="compileqchelp.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgbb1929e">
-<h3 id="orgbb1929e">Output</h3>
+<section id="slide-orgc84ad2d">
+<h3 id="orgc84ad2d">Output</h3>
 <ul>
 <li>Configurable shortname</li>
 <li>Different Sheets for each data type</li>
 
 </ul>
 
-<div id="orgcb1f896" class="figure">
+<div id="orgec584cf" class="figure">
 <p><img src="spreadsheet.png" alt="spreadsheet.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgbfe7c3e">
-<h3 id="orgbfe7c3e">Features</h3>
+<section id="slide-org96e92ef">
+<h3 id="org96e92ef">Features</h3>
 <p>
-Aggregate the following output
+Aggregate the following output:
 </p>
 <ul>
 <li>Homer</li>
@@ -165,18 +241,29 @@ Aggregate the following output
 
 </ul>
 </section>
-<section id="slide-orga264918">
-<h3 id="orga264918"><span class="todo TODO">TODO</span> Development strategy</h3>
+<section id="slide-org777dc27">
+<h3 id="org777dc27">Development strategy</h3>
 <ul>
 <li>Test based development</li>
 <li>Object oriented</li>
 <li>Design before code</li>
-<li>Automatic documentation (LINK)</li>
+<li>Automatic documentation</li>
 
 </ul>
 </section>
-<section id="slide-org73a594a">
-<h3 id="org73a594a"><span class="todo TODO">TODO</span> ARCHITECTURE</h3>
+<section id="slide-orge80f769">
+<h3 id="orge80f769">Project Structure</h3>
+<pre class="example">
+compileqc
+├── cli.py
+├── data.py
+├── __init__.py
+├── __main__.py
+└── __pycache__
+</pre>
+</section>
+<section id="slide-orga526b80">
+<h3 id="orga526b80">Architecture</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -185,12 +272,6 @@ Aggregate the following output
 
 <col  class="org-left" />
 </colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">High level</th>
-<th scope="col" class="org-left">Low level</th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td class="org-left"><img src="compileqc_high_level.png" alt="compileqc_high_level.png" /></td>
@@ -201,15 +282,15 @@ Aggregate the following output
 </section>
 </section>
 <section>
-<section id="slide-org2938ab0">
-<h2 id="org2938ab0">Atac seq mixtape</h2>
+<section id="slide-org006fa41">
+<h2 id="org006fa41">Atac seq mixtape</h2>
 <ul>
 <li>Nextflow pipeline to automate analysis</li>
 
 </ul>
 </section>
-<section id="slide-org987a8f8">
-<h3 id="org987a8f8">Contribution</h3>
+<section id="slide-org62d15ed">
+<h3 id="org62d15ed">Contribution</h3>
 <ul>
 <li>Make UI</li>
 <li>compilqc integration</li>
@@ -218,111 +299,81 @@ Aggregate the following output
 </section>
 </section>
 <section>
-<section id="slide-org1646e47">
-<h2 id="org1646e47">Make UI</h2>
-<ul>
-<li>Intuitive interface</li>
-<li>Automatic help generation</li>
-<li>Error detection</li>
-
-</ul>
-</section>
-<section id="slide-orgef2df96">
-<h3 id="orgef2df96">Usage</h3>
-<div class="org-src-container">
-
-<pre class="src src-bash"><span style="color: #fdf6e3;">make</span> <span style="color: #5f676b;"># </span><span style="color: #5f676b;">or </span><span style="color: #5f676b;">make</span><span style="color: #5f676b;"> help</span>
-<span style="color: #fdf6e3;">make</span> config <span style="color: #5f676b;"># </span><span style="color: #5f676b;">will walk you through data entry</span>
-<span style="color: #fdf6e3;">make</span> config <span style="color: #5f676b;"># </span><span style="color: #5f676b;">run it after data entry</span>
-<span style="color: #fdf6e3;">make</span> run <span style="color: #5f676b;"># </span><span style="color: #5f676b;">run the pipeline (will fail)</span>
-</pre>
-</div>
-</section>
-<section id="slide-org87b258c">
-<h3 id="org87b258c"><span class="todo TODO">TODO</span> Demo</h3>
-<p>
-ADD GIF HERE
-</p>
-</section>
-<section id="slide-org42278a8">
-<h3 id="org42278a8">Advantages over the old method</h3>
-<ul>
-<li>Users don&rsquo;t have to learn a new configuration framework</li>
-<li>Options have sane defaults</li>
-
-</ul>
-</section>
-</section>
-<section>
-<section id="slide-org69c8e27">
-<h2 id="org69c8e27">Compileqc integration</h2>
+<section id="slide-org6c4ec20">
+<h2 id="org6c4ec20">Compileqc integration</h2>
 <ul>
 <li>New and improved QC sheet</li>
 
 </ul>
 </section>
-<section id="slide-org99216e6">
-<h3 id="org99216e6">Implementation details</h3>
+<section id="slide-org9c59365">
+<h3 id="org9c59365">Implementation details</h3>
 <ul>
 <li>Added an easy way to add new flags</li>
-<li>new mapping json input allows for shortname in QC sheet</li>
+<li>New mapping json input allows for shortname configuration in QC sheet</li>
 <li>No module dependencies, uses singularity containers</li>
 
 </ul>
 </section>
 </section>
 <section>
-<section id="slide-orgef2db12">
-<h2 id="orgef2db12">Mixtape Engineers</h2>
+<section id="slide-org991ca4e">
+<h2 id="org991ca4e">Make UI</h2>
 <ul>
-<li>Gitlab repo that facilitates team organization</li>
-<li>Set of standards for new projects</li>
+<li>Intuitive interface</li>
+<li>Automatic help generation</li>
+<li><p>
+Error detection
+</p>
+
+
+<div id="org4b6a004" class="figure">
+<p><img src="make_interface.gif" alt="make_interface.gif" />
+</p>
+</div></li>
 
 </ul>
 </section>
-<section id="slide-org9d5c96d">
-<h3 id="org9d5c96d">Agile Board</h3>
+<section id="slide-orgbc2b73f">
+<h3 id="orgbc2b73f">Usage</h3>
+<div class="leftcol" id="org806754d">
+<div class="org-src-container">
 
-<div id="org6823d65" class="figure">
-<p><img src="agile_board.png" alt="agile_board.png" />
+<pre class="src src-bash"><span style="color: #fdf6e3;">make</span> <span style="color: #5f676b;"># </span><span style="color: #5f676b;">or </span><span style="color: #5f676b;">make</span><span style="color: #5f676b;"> help</span>
+<span style="color: #fdf6e3;">make</span> config <span style="color: #5f676b;"># </span><span style="color: #5f676b;">will guide you through initial data entry</span>
+<span style="color: #fdf6e3;">make</span> config <span style="color: #5f676b;"># </span><span style="color: #5f676b;">run it after data entry</span>
+<span style="color: #fdf6e3;">make</span> run <span style="color: #5f676b;"># </span><span style="color: #5f676b;">run the pipeline (will fail)</span>
+</pre>
+</div>
+
+</div>
+<div class="rightcol" id="org827e4bb">
+
+<div id="org45540e9" class="figure">
+<p><img src="make_help.png" alt="make_help.png" width="70%" />
 </p>
 </div>
-</section>
-<section id="slide-orgc6adba2">
-<h3 id="orgc6adba2"><span class="todo TODO">TODO</span> Architecture</h3>
-<p>
-Add folder structure here
-</p>
-</section>
-<section id="slide-org686605a">
-<h3 id="org686605a">Rationale (why not the wiki?)</h3>
-<p>
-The wiki is great for:
-</p>
-<ul>
-<li>User Instructions</li>
-<li>General Design documentation</li>
 
-</ul>
-
-<p>
-The wiki is limited in:
-</p>
+</div>
+</section>
+<section id="slide-org1ea703e">
+<h3 id="org1ea703e">Advantages over the old method</h3>
 <ul>
-<li>Version control</li>
-<li>Division of tasks</li>
-<li>File viewing</li>
+<li>Users don&rsquo;t have to learn a new configuration framework</li>
+<li>Options have sane defaults</li>
+<li>More intuitive</li>
+<li>Automatic documentation</li>
 
 </ul>
 </section>
 </section>
 </div>
 </div>
-<script src="./reveal.js/dist/reveal.js"></script>
-<script src="./reveal.js/plugin/markdown/markdown.js"></script>
-<script src="./reveal.js/plugin/notes/notes.js"></script>
-<script src="./reveal.js/plugin/search/search.js"></script>
-<script src="./reveal.js/plugin/zoom/zoom.js"></script>
+<script src="./revealjs/dist/reveal.js"></script>
+<script src="./revealjs/plugin/markdown/markdown.js"></script>
+<script src="./revealjs/plugin/notes/notes.js"></script>
+<script src="./revealjs/plugin/search/search.js"></script>
+<script src="./revealjs/plugin/zoom/zoom.js"></script>
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
