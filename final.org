@@ -1,4 +1,8 @@
-
+#+OPTIONS: toc:nil num:nil
+#+REVEAL_ROOT: ./reveal.js
+#+REVEAL_TITLE_SLIDE:
+#+REVEAL_THEME: serif
+#+EXPORT_FILE_NAME: index.html
 * Journey through the Pipeline
 + COOP Student from UC
 + Computational Team
