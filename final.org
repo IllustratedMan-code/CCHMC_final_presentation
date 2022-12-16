@@ -11,11 +11,13 @@
 
 [[file:DNA.svg]]
 ** What Have I been doing?
++ Mixtape Engineers
 + =trackgen=
 + =compileqc=
 + =atac_seq_mixtape=
-+ Mixtape Engineers
-** Let's Git Started!
+
+#+ATTR_REVEAL: :frag (zoom-in)
+*Let's Git started!*
 * Mixtape Engineers
 + Gitlab repo that facilitates team organization
 + Set of standards for new projects
