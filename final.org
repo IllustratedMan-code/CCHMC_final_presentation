@@ -172,4 +172,6 @@ help: ## show this help
 + Options have sane defaults
 + More intuitive
 + Automatic documentation
+** Wiki
+[[https://tfwiki.cchmc.org/wiki/ENCODE/pipeline/automation][ATAC-seq Mixtape]]
 * That's it!
