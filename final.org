@@ -2,6 +2,7 @@
 #+REVEAL_ROOT: ./revealjs
 #+title: Journey Through the Pipeline
 #+REVEAL_THEME: serif
+#+REVEAL_PLUGINS: (highlight)
 #+EXPORT_FILE_NAME: index.html
 
 
