@@ -44,6 +44,21 @@ trackgen config # generates trackgen config, finds required files
 trackgen hub # generates hub config
 #+end_src
 [[file:trackgenhelp.png]]
+** Config
+#+begin_src json
+{
+    "hub": {
+        "hg19": {
+            "first.bigwig": {
+                "bigDataUrl": "first.bigwig",
+                "type": "bigWig",
+                "color": "color(#4287f5)"
+            }
+        }
+    }
+}
+#+end_src
+
 ** Containers and Modules
 + Module is stable, container is unstable
 #+begin_src bash

@@ -20,8 +20,8 @@
 
 
 <section>
-<section id="slide-org3b90ae6">
-<h2 id="org3b90ae6">Who am I?</h2>
+<section id="slide-orgd4fdf6b">
+<h2 id="orgd4fdf6b">Who am I?</h2>
 <ul>
 <li>COOP Student from UC</li>
 <li>Computational Team</li>
@@ -29,13 +29,13 @@
 </ul>
 
 
-<div id="org62b2e31" class="figure">
+<div id="org09e53c8" class="figure">
 <p><img src="DNA.svg" alt="DNA.svg" class="org-svg" />
 </p>
 </div>
 </section>
-<section id="slide-orge0d8e04">
-<h3 id="orge0d8e04">What Have I been doing?</h3>
+<section id="slide-org6715694">
+<h3 id="org6715694">What Have I been doing?</h3>
 <ul>
 <li>Mixtape Engineers</li>
 <li><code>trackgen</code></li>
@@ -50,8 +50,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org05178e2">
-<h2 id="org05178e2">Mixtape Engineers</h2>
+<section id="slide-orgca36253">
+<h2 id="orgca36253">Mixtape Engineers</h2>
 <ul>
 <li>Gitlab repo that facilitates team organization</li>
 <li>Set of standards for new projects</li>
@@ -59,24 +59,24 @@
 
 </ul>
 </section>
-<section id="slide-orgbe46004">
-<h3 id="orgbe46004">Agile Board</h3>
+<section id="slide-org83e943d">
+<h3 id="org83e943d">Agile Board</h3>
 
-<div id="org85fcb71" class="figure">
+<div id="org659f8cf" class="figure">
 <p><img src="agile_board.png" alt="agile_board.png" />
 </p>
 </div>
 </section>
-<section id="slide-org73ee6ae">
-<h3 id="org73ee6ae">Project Structure</h3>
+<section id="slide-org581364d">
+<h3 id="org581364d">Project Structure</h3>
 
-<div id="orgbaa03c1" class="figure">
+<div id="org212f0b5" class="figure">
 <p><img src="mixtape_engineers.png" alt="mixtape_engineers.png" width="840px" />
 </p>
 </div>
 </section>
-<section id="slide-org1cca783">
-<h3 id="org1cca783">Rationale (why not the wiki?)</h3>
+<section id="slide-org4187822">
+<h3 id="org4187822">Rationale (why not the wiki?)</h3>
 <ul>
 <li>Companion to the ASAP wiki page</li>
 <li>Advanced version control</li>
@@ -87,24 +87,24 @@
 </section>
 </section>
 <section>
-<section id="slide-org754bb76">
-<h2 id="org754bb76">Trackgen</h2>
+<section id="slide-orga3971bc">
+<h2 id="orga3971bc">Trackgen</h2>
 <ul>
 <li>Generate UCSC trackhub config files
 <img src="trackgen.png" alt="trackgen.png" /></li>
 
 </ul>
 </section>
-<section id="slide-org8606776">
-<h3 id="org8606776">Output</h3>
+<section id="slide-orga5b08c6">
+<h3 id="orga5b08c6">Output</h3>
 
-<div id="org03078cc" class="figure">
+<div id="orge549f09" class="figure">
 <p><img src="trackgen_output.png" alt="trackgen_output.png" />
 </p>
 </div>
 </section>
-<section id="slide-org80f2527">
-<h3 id="org80f2527">Usage</h3>
+<section id="slide-orga8a1598">
+<h3 id="orga8a1598">Usage</h3>
 <div class="org-src-container">
 
 <pre class="src src-bash">trackgen --help <span style="color: #5f676b;"># </span><span style="color: #5f676b;">get some help</span>
@@ -113,13 +113,32 @@ trackgen hub <span style="color: #5f676b;"># </span><span style="color: #5f676b;
 </pre>
 </div>
 
-<div id="org3778fe2" class="figure">
+<div id="org58ea576" class="figure">
 <p><img src="trackgenhelp.png" alt="trackgenhelp.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgfba7370">
-<h3 id="orgfba7370">Containers and Modules</h3>
+<section id="slide-org7dba836">
+<h3 id="org7dba836">Config</h3>
+<div class="org-src-container">
+
+<pre class="src src-json">{
+    <span style="color: #a7c080;">"hub"</span>: {
+        <span style="color: #a7c080;">"hg19"</span>: {
+            <span style="color: #a7c080;">"first.bigwig"</span>: {
+                <span style="color: #a7c080;">"bigDataUrl"</span>: <span style="color: #83c092;">"first.bigwig"</span>,
+                <span style="color: #a7c080;">"type"</span>: <span style="color: #83c092;">"bigWig"</span>,
+                <span style="color: #a7c080;">"color"</span>: <span style="color: #83c092;">"color(#4287f5)"</span>
+            }
+        }
+    }
+}
+</pre>
+</div>
+
+</section>
+<section id="slide-orgbe6f9c6">
+<h3 id="orgbe6f9c6">Containers and Modules</h3>
 <ul>
 <li>Module is stable, container is unstable</li>
 
@@ -134,8 +153,8 @@ singularity run $<span style="color: #9da9a0;">TEAM</span>/lew2mz/containers/tra
 </pre>
 </div>
 </section>
-<section id="slide-org423768a">
-<h3 id="org423768a">Features</h3>
+<section id="slide-orgf9d1c92">
+<h3 id="orgf9d1c92">Features</h3>
 <ul>
 <li>Functional config language (modified JSON/YAML)</li>
 <li>Regex/glob based detection of files</li>
@@ -143,8 +162,8 @@ singularity run $<span style="color: #9da9a0;">TEAM</span>/lew2mz/containers/tra
 
 </ul>
 </section>
-<section id="slide-orga5d2177">
-<h3 id="orga5d2177">Development strategy</h3>
+<section id="slide-org177b3c5">
+<h3 id="org177b3c5">Development strategy</h3>
 <ul>
 <li>Unit tests</li>
 <li>Easily extendable</li>
@@ -153,13 +172,13 @@ singularity run $<span style="color: #9da9a0;">TEAM</span>/lew2mz/containers/tra
 </ul>
 
 
-<div id="org14893bc" class="figure">
+<div id="org20565c0" class="figure">
 <p><img src="trackgen_docs.png" alt="trackgen_docs.png" />
 </p>
 </div>
 </section>
-<section id="slide-org4332d33">
-<h3 id="org4332d33">Project structure</h3>
+<section id="slide-org49e4bce">
+<h3 id="org49e4bce">Project structure</h3>
 <pre class="example">
 trackgen
 ├── classes.py
@@ -184,8 +203,8 @@ trackgen
 └── __pycache__
 </pre>
 </section>
-<section id="slide-org60cd772">
-<h3 id="org60cd772">Architecture</h3>
+<section id="slide-org58ffc6f">
+<h3 id="org58ffc6f">Architecture</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -205,16 +224,16 @@ trackgen
 </section>
 </section>
 <section>
-<section id="slide-org86054eb">
-<h2 id="org86054eb">Compileqc</h2>
+<section id="slide-orga55db69">
+<h2 id="orga55db69">Compileqc</h2>
 <ul>
 <li>Generate QC sheet from pipeline</li>
 <li>Budget Multiqc</li>
 
 </ul>
 </section>
-<section id="slide-org163c4aa">
-<h3 id="org163c4aa">Usage</h3>
+<section id="slide-orgca52bab">
+<h3 id="orgca52bab">Usage</h3>
 <div class="org-src-container">
 
 <pre class="src src-bash">module load singularity
@@ -222,26 +241,26 @@ singularity run $<span style="color: #9da9a0;">TEAM</span>/lew2mz/containers/com
 </pre>
 </div>
 
-<div id="org2fdee79" class="figure">
+<div id="org687dfbb" class="figure">
 <p><img src="compileqchelp.png" alt="compileqchelp.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgd35fbac">
-<h3 id="orgd35fbac">Output</h3>
+<section id="slide-org542226c">
+<h3 id="org542226c">Output</h3>
 <ul>
 <li>Configurable shortname</li>
 <li>Different Sheets for each data type</li>
 
 </ul>
 
-<div id="org49fabe6" class="figure">
+<div id="orga887c0b" class="figure">
 <p><img src="spreadsheet.png" alt="spreadsheet.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgecc3a24">
-<h3 id="orgecc3a24">Features</h3>
+<section id="slide-orge70cf63">
+<h3 id="orge70cf63">Features</h3>
 <p>
 Aggregate the following output:
 </p>
@@ -252,8 +271,8 @@ Aggregate the following output:
 
 </ul>
 </section>
-<section id="slide-orgc6adf25">
-<h3 id="orgc6adf25">Development strategy</h3>
+<section id="slide-org1ae758f">
+<h3 id="org1ae758f">Development strategy</h3>
 <ul>
 <li>Test based development</li>
 <li>Object oriented</li>
@@ -263,8 +282,8 @@ Aggregate the following output:
 
 </ul>
 </section>
-<section id="slide-orgdd93617">
-<h3 id="orgdd93617">Project Structure</h3>
+<section id="slide-orgf9946c8">
+<h3 id="orgf9946c8">Project Structure</h3>
 <pre class="example">
 compileqc
 ├── cli.py
@@ -274,8 +293,8 @@ compileqc
 └── __pycache__
 </pre>
 </section>
-<section id="slide-org677e21e">
-<h3 id="org677e21e">Architecture</h3>
+<section id="slide-org88490eb">
+<h3 id="org88490eb">Architecture</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -294,15 +313,15 @@ compileqc
 </section>
 </section>
 <section>
-<section id="slide-orgc47e3b7">
-<h2 id="orgc47e3b7">Atac seq mixtape</h2>
+<section id="slide-org18a2b98">
+<h2 id="org18a2b98">Atac seq mixtape</h2>
 <ul>
 <li>Nextflow pipeline to automate analysis</li>
 
 </ul>
 </section>
-<section id="slide-orgee21fdb">
-<h3 id="orgee21fdb">Contribution</h3>
+<section id="slide-org09be6a9">
+<h3 id="org09be6a9">Contribution</h3>
 <ul>
 <li>Make UI</li>
 <li>compilqc integration</li>
@@ -311,15 +330,15 @@ compileqc
 </section>
 </section>
 <section>
-<section id="slide-org28e26f4">
-<h2 id="org28e26f4">Compileqc integration</h2>
+<section id="slide-orgede61c9">
+<h2 id="orgede61c9">Compileqc integration</h2>
 <ul>
 <li>New and improved QC sheet</li>
 
 </ul>
 </section>
-<section id="slide-orgffe15fc">
-<h3 id="orgffe15fc">Implementation details</h3>
+<section id="slide-orgc12dd92">
+<h3 id="orgc12dd92">Implementation details</h3>
 <ul>
 <li>Added an easy way to add new flags</li>
 <li>New mapping json input allows for shortname configuration in QC sheet</li>
@@ -329,8 +348,8 @@ compileqc
 </section>
 </section>
 <section>
-<section id="slide-org0f8e0ca">
-<h2 id="org0f8e0ca">Make UI</h2>
+<section id="slide-orgaf54ad4">
+<h2 id="orgaf54ad4">Make UI</h2>
 <ul>
 <li>Intuitive interface</li>
 <li>Automatic help generation</li>
@@ -339,16 +358,16 @@ Error detection
 </p>
 
 
-<div id="orgd952889" class="figure">
+<div id="org86cf318" class="figure">
 <p><img src="make_interface.gif" alt="make_interface.gif" />
 </p>
 </div></li>
 
 </ul>
 </section>
-<section id="slide-org1e3759c">
-<h3 id="org1e3759c">Usage</h3>
-<div class="leftcol" id="orgfe544a5">
+<section id="slide-org944e5dd">
+<h3 id="org944e5dd">Usage</h3>
+<div class="leftcol" id="orged91245">
 <div class="org-src-container">
 
 <pre class="src src-bash"><span style="color: #fdf6e3;">make</span> <span style="color: #5f676b;"># </span><span style="color: #5f676b;">or </span><span style="color: #5f676b;">make</span><span style="color: #5f676b;"> help</span>
@@ -359,17 +378,17 @@ Error detection
 </div>
 
 </div>
-<div class="rightcol" id="org1bcb321">
+<div class="rightcol" id="org4f5c053">
 
-<div id="orgfdd6650" class="figure">
+<div id="org3bb191a" class="figure">
 <p><img src="make_help.png" alt="make_help.png" width="70%" />
 </p>
 </div>
 
 </div>
 </section>
-<section id="slide-org2177ffe">
-<h3 id="org2177ffe">Help code</h3>
+<section id="slide-org4a4037d">
+<h3 id="org4a4037d">Help code</h3>
 <div class="org-src-container">
 
 <pre class="src src-makefile"><span style="color: #a7c080;">help</span>: <span style="color: #5f676b;">## </span><span style="color: #5f676b;">show this help</span>
@@ -384,8 +403,8 @@ Error detection
 </pre>
 </div>
 </section>
-<section id="slide-orge76bfe6">
-<h3 id="orge76bfe6">Advantages over the old method</h3>
+<section id="slide-orgb3f57ac">
+<h3 id="orgb3f57ac">Advantages over the old method</h3>
 <ul>
 <li>Users don&rsquo;t have to learn a new configuration framework</li>
 <li>Options have sane defaults</li>
@@ -394,16 +413,16 @@ Error detection
 
 </ul>
 </section>
-<section id="slide-org3f6e155">
-<h3 id="org3f6e155">Wiki</h3>
+<section id="slide-org562cd9b">
+<h3 id="org562cd9b">Wiki</h3>
 <p>
 <a href="https://tfwiki.cchmc.org/wiki/ENCODE/pipeline/automation">ATAC-seq Mixtape</a>
 </p>
 </section>
 </section>
 <section>
-<section id="slide-orgf972c7a">
-<h2 id="orgf972c7a">That&rsquo;s it!</h2>
+<section id="slide-org9d6958f">
+<h2 id="org9d6958f">That&rsquo;s it!</h2>
 </section>
 </section>
 </div>
