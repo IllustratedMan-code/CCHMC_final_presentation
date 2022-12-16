@@ -18,7 +18,7 @@
 + Engineering rigor
 ** Agile Board
 [[file:agile_board.png]]
-** Architecture
+** Project Structure
 #+attr_html: :width 840px
 [[file:mixtape_engineers.png]]
 ** Rationale (why not the wiki?)
@@ -153,3 +153,4 @@ make run # run the pipeline (will fail)
 + Options have sane defaults
 + More intuitive
 + Automatic documentation
+* That's it!
