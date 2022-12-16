@@ -4,14 +4,18 @@
 #+REVEAL_THEME: serif
 #+EXPORT_FILE_NAME: index.html
 
+
 * Who am I?
 + COOP Student from UC
 + Computational Team
+
+[[file:DNA.svg]]
 ** What Have I been doing?
 + =trackgen=
 + =compileqc=
 + =atac_seq_mixtape=
 + Mixtape Engineers
+** Let's Git Started!
 * Mixtape Engineers
 + Gitlab repo that facilitates team organization
 + Set of standards for new projects
@@ -107,6 +111,7 @@ Aggregate the following output:
 + Object oriented
 + Design before code
 + Automatic documentation
++ Extendable
 ** Project Structure
 #+begin_src
 compileqc
@@ -148,6 +153,18 @@ make run # run the pipeline (will fail)
 #+attr_html: :width 70%
 [[file:make_help.png]]
 #+end_rightcol
+** Help code
+#+begin_src makefile
+help: ## show this help
+	@sed -ne "s/^##\(.*\)/\1/p" $(MAKEFILE_LIST)
+	@printf "────────────────────────$(bold)$(blue) Make Commands $(reset)────────────────────────────────\n"
+	@sed -ne "/@sed/!s/\(^[^#?=]*:\).*##\(.*\)/$(green)$(bold)\1$(reset)\2/p" $(MAKEFILE_LIST)
+	@printf "────────────────────────$(bold)$(blue) Make Variables $(reset)───────────────────────────────\n"
+	@sed -ne "/@sed/!s/\([^ ]*\) *?=\(.*\)##\(.*\)/$(blue)$(bold)\1:$(magenta)\2$(reset)\3/p" $(MAKEFILE_LIST)
+	@printf "────────────────────────$(bold)$(yellow) Nextflow Arguments $(reset)───────────────────────────\n"
+	@sed -ne "/@sed/!s/params.\([a-zA-Z]*\) *= *\(.*\)\/\/\(.*\)/$(yellow)$(bold)--\1:$(magenta) \2$(reset)\3/p" nextflow.config
+	@printf "───────────────────────────────────────────────────────────────────────\n"
+#+end_src
 ** Advantages over the old method
 + Users don't have to learn a new configuration framework
 + Options have sane defaults
